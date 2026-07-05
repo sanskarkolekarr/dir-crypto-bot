@@ -1,25 +1,22 @@
-# CryptoWallet Bot - Cybersecurity Demo
+# CryptoWallet Bot — Cybersecurity Demo
 
-A Telegram bot demonstrating social engineering scam techniques for cybersecurity education.
+A Telegram bot demonstrating social engineering scam techniques.
 
-## Setup
+## Deploy to Vercel
 
-1. Copy `.env` and add your `BOT_TOKEN` from [@BotFather](https://t.me/BotFather)
-2. Deploy to Vercel
-3. Set webhook:
-   ```
-   npm run set-webhook
-   ```
+1. Push to GitHub
+2. Import repo to Vercel (detects Node.js automatically)
+3. Add `BOT_TOKEN` in Vercel env vars
+4. Deploy
 
-## Commands
+## Set webhook (run once)
 
-- `/start` — Show coin selection
+```bash
+npm run set-webhook
+```
 
-## Files
+## Local testing
 
-| File | Purpose |
-|------|---------|
-| `lib/bot.js` | Bot logic and handlers |
-| `app/api/webhook/route.js` | Vercel webhook endpoint |
-| `bot.js` | Local polling (testing) |
-| `scripts/set-webhook.js` | Register webhook URL |
+```bash
+npm start
+```

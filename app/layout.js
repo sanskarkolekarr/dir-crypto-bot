@@ -1,8 +1,5 @@
-import "./globals.css";
-
 export const metadata = {
-  title: "Crypto Wallet Demo",
-  description: "Cybersecurity awareness demo - How crypto scams work",
+  title: "CryptoWallet Bot",
 };
 
 export default function RootLayout({ children }) {

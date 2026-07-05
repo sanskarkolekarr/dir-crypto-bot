@@ -1,5 +1,5 @@
-import "dotenv/config";
-import { createBot } from "./lib/bot.js";
+require("dotenv").config();
+const { createBot } = require("./lib/bot");
 
 const token = process.env.BOT_TOKEN;
 if (!token) {
