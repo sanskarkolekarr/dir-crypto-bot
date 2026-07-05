@@ -2,14 +2,24 @@
 
 import { useState, useRef, useEffect } from "react";
 
-const COINS = [
-  { id: "solana", name: "Solana", balance: 90888, emoji: "🟣" },
-  { id: "usdt", name: "USDT", balance: 1300349, emoji: "💚" },
-  { id: "dai", name: "DAI", balance: 70000, emoji: "🟡" },
-  { id: "eth", name: "ETH", balance: 388000, emoji: "🔵" },
-];
+function parseCoins() {
+  const raw = process.env.NEXT_PUBLIC_COINS;
+  if (raw) {
+    return raw.split("|").map((entry) => {
+      const [id, name, balance, emoji] = entry.split(",");
+      return { id, name, balance: parseInt(balance, 10), emoji };
+    });
+  }
+  return [
+    { id: "solana", name: "Solana", balance: 90888, emoji: "🟣" },
+    { id: "usdt", name: "USDT", balance: 1300349, emoji: "💚" },
+    { id: "dai", name: "DAI", balance: 70000, emoji: "🟡" },
+    { id: "eth", name: "ETH", balance: 388000, emoji: "🔵" },
+  ];
+}
 
-const MIN_BUMP = 600;
+const COINS = parseCoins();
+const MIN_BUMP = parseInt(process.env.NEXT_PUBLIC_MIN_BUMP, 10) || 600;
 const STEPS = {
   COIN_SELECT: "COIN_SELECT",
   AWAITING_ADDRESS: "AWAITING_ADDRESS",
