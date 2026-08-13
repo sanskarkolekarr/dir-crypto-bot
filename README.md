@@ -2,20 +2,22 @@
 
 A Telegram bot demonstrating social engineering scam techniques.
 
-## Deploy to Vercel
+## Setup
 
-1. Push to GitHub
-2. Import repo to Vercel (detects Node.js automatically)
-3. Add `BOT_TOKEN` in Vercel env vars
-4. Deploy
-
-## Set webhook (run once)
+1. Install dependencies:
 
 ```bash
-npm run set-webhook
+npm install
 ```
 
-## Local testing
+2. Create `.env` from `.env.example` and set your `BOT_TOKEN`:
+
+```
+BOT_TOKEN=your_telegram_bot_token_here
+MIN_BUMP=600
+```
+
+3. Run the bot (polling):
 
 ```bash
 npm start
